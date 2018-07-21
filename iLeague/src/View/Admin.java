@@ -5,8 +5,6 @@
  */
 package View;
 
-import java.awt.Color;
-import java.util.List;
 import javax.swing.DefaultListSelectionModel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
