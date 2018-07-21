@@ -53,10 +53,8 @@ public class Login extends javax.swing.JFrame {
                 jPasswordField1.setText("");
             }
         });
-
-        adminMenuList = new javax.swing.JList(adminMenu);
-        
     }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -144,15 +142,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButtonSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignInActionPerformed
-        Window test = new Window();
-        test.setSize(976, 732);
+        
 
         //Check here what kind of user is logining in
         if (SysData.getInstance().getAdmins().containsKey(jTextFieldUserEmail.getText())) {
             if (SysData.getInstance().getAdmins().get(jTextFieldUserEmail.getText()).equals(jPasswordField1.getText())) {
-                test.EmptyMenuSetter(adminMenuList);
+                Admin test = new Admin();
+                test.setSize(976, 732);
                 test.setVisible(true);
                 this.dispose();
+                
             }
 
         } else {
@@ -174,6 +173,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldUserEmail;
     // End of variables declaration//GEN-END:variables
 
-    private final String adminMenu[] = {"Administration", "Coach", "Team", "Player","Receptionist","Customer"};
-    private final javax.swing.JList adminMenuList;
+    
+
 }
