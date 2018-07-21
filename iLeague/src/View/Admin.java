@@ -99,6 +99,11 @@ public class Admin extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        AdminMenu.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                AdminMenuValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(AdminMenu);
 
         getContentPane().add(jScrollPane1);
@@ -110,6 +115,14 @@ public class Admin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AdminMenuValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_AdminMenuValueChanged
+        String selected = AdminMenu.getSelectedValue();
+        switch(selected){
+            case "Administration":
+                
+        }
+    }//GEN-LAST:event_AdminMenuValueChanged
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> AdminMenu;
