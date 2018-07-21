@@ -55,14 +55,14 @@ public class Admin extends javax.swing.JFrame {
         deleteUsers = new javax.swing.JButton();
         pendingButton = new javax.swing.JButton();
         addUsers = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        AdminMenu = new javax.swing.JList<>();
+        jLabelBG = new javax.swing.JLabel();
         TeamPanel = new javax.swing.JPanel();
         CoachPanel = new javax.swing.JPanel();
         PlayerPanel = new javax.swing.JPanel();
         ReceptionistPanel = new javax.swing.JPanel();
         CustomerPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        AdminMenu = new javax.swing.JList<>();
-        jLabelBG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(976, 732));
@@ -100,16 +100,8 @@ public class Admin extends javax.swing.JFrame {
 
         getContentPane().add(Administration);
         Administration.setBounds(240, 50, 700, 580);
-        getContentPane().add(TeamPanel);
-        TeamPanel.setBounds(240, 50, 700, 580);
-        getContentPane().add(CoachPanel);
-        CoachPanel.setBounds(240, 50, 700, 580);
-        getContentPane().add(PlayerPanel);
-        PlayerPanel.setBounds(240, 50, 700, 580);
-        getContentPane().add(ReceptionistPanel);
-        ReceptionistPanel.setBounds(240, 50, 700, 580);
-        getContentPane().add(CustomerPanel);
-        CustomerPanel.setBounds(240, 50, 700, 580);
+
+        jScrollPane1.setBorder(null);
 
         AdminMenu.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Administration", "Coach", "Team", "Player", "Receptionist", "Customer" };
@@ -129,6 +121,16 @@ public class Admin extends javax.swing.JFrame {
         jLabelBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/main.png"))); // NOI18N
         getContentPane().add(jLabelBG);
         jLabelBG.setBounds(0, 0, 990, 740);
+        getContentPane().add(TeamPanel);
+        TeamPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(CoachPanel);
+        CoachPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(PlayerPanel);
+        PlayerPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(ReceptionistPanel);
+        ReceptionistPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(CustomerPanel);
+        CustomerPanel.setBounds(240, 50, 700, 580);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,12 +138,9 @@ public class Admin extends javax.swing.JFrame {
     private void AdminMenuValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_AdminMenuValueChanged
         String selected = AdminMenu.getSelectedValue();
         switch (selected) {
+            
             case "Administration":
-                CoachPanel.setVisible(false);
-                TeamPanel.setVisible(false);
-                PlayerPanel.setVisible(false);
-                ReceptionistPanel.setVisible(false);
-                CustomerPanel.setVisible(false);
+                
                 Administration.setVisible(true);
                 
             case "Coach":
