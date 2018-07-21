@@ -12,8 +12,8 @@ import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 import static javax.swing.ListSelectionModel.SINGLE_SELECTION;
 
-
 public class Admin extends javax.swing.JFrame {
+
     /**
      * @return the jLabelBG
      */
@@ -27,44 +27,21 @@ public class Admin extends javax.swing.JFrame {
     public void setjLabelBG(javax.swing.JLabel jLabelBG) {
         this.jLabelBG = jLabelBG;
     }
-    /**
-     * @return the jScrollPane2
-     */
-    public javax.swing.JScrollPane getjScrollPane2() {
-        return WindowScroll;
-    }
 
-    /**
-     * @param jScrollPane2 the jScrollPane2 to set
-     */
-    public void setjScrollPane2(javax.swing.JScrollPane jScrollPane2) {
-        this.WindowScroll = jScrollPane2;
-    }
-    /**
-     * @return the jTextAreaMain
-     */
-    public javax.swing.JTextArea getjTextAreaMain() {
-        return jTextAreaMain;
-    }
-
-    /**
-     * @param jTextAreaMain the jTextAreaMain to set
-     */
-    public void setjTextAreaMain(javax.swing.JTextArea jTextAreaMain) {
-        this.jTextAreaMain = jTextAreaMain;
-    }
     public Admin() {
         initComponents();
         AdminMenu.setSelectionMode(DefaultListSelectionModel.SINGLE_SELECTION);
         AdminMenu.setListData(adminMenu);
-        jTextAreaMain.setOpaque(false);
-        jTextAreaMain.setBackground(new Color(0,0,0,0));
-        jTextAreaMain.setEditable(false);
-        
-        WindowScroll.getViewport().setBackground(new Color(0,0,0,0));
-        
-        
+
+        Administration.setVisible(false);
+        CoachPanel.setVisible(false);
+        TeamPanel.setVisible(false);
+        PlayerPanel.setVisible(false);
+        ReceptionistPanel.setVisible(false);
+        CustomerPanel.setVisible(false);
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,8 +51,15 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        WindowScroll = new javax.swing.JScrollPane();
-        jTextAreaMain = new javax.swing.JTextArea();
+        Administration = new javax.swing.JPanel();
+        deleteUsers = new javax.swing.JButton();
+        pendingButton = new javax.swing.JButton();
+        addUsers = new javax.swing.JButton();
+        TeamPanel = new javax.swing.JPanel();
+        CoachPanel = new javax.swing.JPanel();
+        PlayerPanel = new javax.swing.JPanel();
+        ReceptionistPanel = new javax.swing.JPanel();
+        CustomerPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AdminMenu = new javax.swing.JList<>();
         jLabelBG = new javax.swing.JLabel();
@@ -84,15 +68,48 @@ public class Admin extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(976, 732));
         getContentPane().setLayout(null);
 
-        jTextAreaMain.setEditable(false);
-        jTextAreaMain.setColumns(20);
-        jTextAreaMain.setRows(5);
-        jTextAreaMain.setBorder(null);
-        jTextAreaMain.setOpaque(false);
-        WindowScroll.setViewportView(jTextAreaMain);
+        deleteUsers.setText("Delete Users");
 
-        getContentPane().add(WindowScroll);
-        WindowScroll.setBounds(240, 50, 690, 580);
+        pendingButton.setText("Pending For Aprroval");
+
+        addUsers.setText("Add Users");
+
+        javax.swing.GroupLayout AdministrationLayout = new javax.swing.GroupLayout(Administration);
+        Administration.setLayout(AdministrationLayout);
+        AdministrationLayout.setHorizontalGroup(
+            AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdministrationLayout.createSequentialGroup()
+                .addGap(289, 289, 289)
+                .addGroup(AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pendingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addUsers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deleteUsers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        AdministrationLayout.setVerticalGroup(
+            AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdministrationLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(addUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(pendingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(deleteUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(150, 150, 150))
+        );
+
+        getContentPane().add(Administration);
+        Administration.setBounds(240, 50, 700, 580);
+        getContentPane().add(TeamPanel);
+        TeamPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(CoachPanel);
+        CoachPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(PlayerPanel);
+        PlayerPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(ReceptionistPanel);
+        ReceptionistPanel.setBounds(240, 50, 700, 580);
+        getContentPane().add(CustomerPanel);
+        CustomerPanel.setBounds(240, 50, 700, 580);
 
         AdminMenu.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Administration", "Coach", "Team", "Player", "Receptionist", "Customer" };
@@ -118,19 +135,68 @@ public class Admin extends javax.swing.JFrame {
 
     private void AdminMenuValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_AdminMenuValueChanged
         String selected = AdminMenu.getSelectedValue();
-        switch(selected){
+        switch (selected) {
             case "Administration":
+                CoachPanel.setVisible(false);
+                TeamPanel.setVisible(false);
+                PlayerPanel.setVisible(false);
+                ReceptionistPanel.setVisible(false);
+                CustomerPanel.setVisible(false);
+                Administration.setVisible(true);
                 
+            case "Coach":
+                Administration.setVisible(false);
+                TeamPanel.setVisible(false);
+                PlayerPanel.setVisible(false);
+                ReceptionistPanel.setVisible(false);
+                CustomerPanel.setVisible(false);
+                CoachPanel.setVisible(true);
+            case "Team":
+                Administration.setVisible(false);
+                CoachPanel.setVisible(false);
+                PlayerPanel.setVisible(false);
+                ReceptionistPanel.setVisible(false);
+                CustomerPanel.setVisible(false);
+                TeamPanel.setVisible(true);
+            case "Player":
+                Administration.setVisible(false);
+                CoachPanel.setVisible(false);
+                TeamPanel.setVisible(false);
+                ReceptionistPanel.setVisible(false);
+                CustomerPanel.setVisible(false);
+                PlayerPanel.setVisible(true);
+            case "Receptionist":
+                Administration.setVisible(false);
+                CoachPanel.setVisible(false);
+                TeamPanel.setVisible(false);
+                PlayerPanel.setVisible(false);
+                CustomerPanel.setVisible(false);
+                ReceptionistPanel.setVisible(true);
+            case "Customer":
+                Administration.setVisible(false);
+                CoachPanel.setVisible(false);
+                TeamPanel.setVisible(false);
+                PlayerPanel.setVisible(false);
+                ReceptionistPanel.setVisible(false);
+                CustomerPanel.setVisible(true);
+
         }
     }//GEN-LAST:event_AdminMenuValueChanged
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> AdminMenu;
-    private javax.swing.JScrollPane WindowScroll;
+    private javax.swing.JPanel Administration;
+    private javax.swing.JPanel CoachPanel;
+    private javax.swing.JPanel CustomerPanel;
+    private javax.swing.JPanel PlayerPanel;
+    private javax.swing.JPanel ReceptionistPanel;
+    private javax.swing.JPanel TeamPanel;
+    private javax.swing.JButton addUsers;
+    private javax.swing.JButton deleteUsers;
     private javax.swing.JLabel jLabelBG;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextAreaMain;
+    private javax.swing.JButton pendingButton;
     // End of variables declaration//GEN-END:variables
 
-private final String adminMenu[] = {"Administration", "Coach", "Team", "Player","Receptionist","Customer"};
+    private final String adminMenu[] = {"Administration", "Coach", "Team", "Player", "Receptionist", "Customer"};
 }
