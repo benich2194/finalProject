@@ -66,17 +66,25 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Administration = new javax.swing.JPanel();
-        deletePlayerButton = new javax.swing.JButton();
-        pendingButton = new javax.swing.JButton();
-        addPlayerButton = new javax.swing.JButton();
-        JLabelPlayer = new javax.swing.JLabel();
-        jLabelAdmin = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AdminMenu = new javax.swing.JList<>();
-        jLabelBG = new javax.swing.JLabel();
         TeamPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonAddTeam = new javax.swing.JButton();
+        jButtonUpdateTeam = new javax.swing.JButton();
+        jButtonRemoveTeam = new javax.swing.JButton();
         CoachPanel = new javax.swing.JPanel();
+        jLabelCoach = new javax.swing.JLabel();
+        jButtonUpdateCoach = new javax.swing.JButton();
+        jButtonAddCoach = new javax.swing.JButton();
+        jButtonRemoveCoach = new javax.swing.JButton();
+        Administration = new javax.swing.JPanel();
+        DeleteUserButton = new javax.swing.JButton();
+        pendingButton = new javax.swing.JButton();
+        addUserButton = new javax.swing.JButton();
+        JLabelUsers = new javax.swing.JLabel();
+        jLabelAdmin = new javax.swing.JLabel();
+        jLabelBG = new javax.swing.JLabel();
         PlayerPanel = new javax.swing.JPanel();
         ReceptionistPanel = new javax.swing.JPanel();
         CustomerPanel = new javax.swing.JPanel();
@@ -84,66 +92,6 @@ public class Admin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(976, 732));
         getContentPane().setLayout(null);
-
-        deletePlayerButton.setLabel("Delete Player");
-        deletePlayerButton.setMaximumSize(new java.awt.Dimension(108, 29));
-        deletePlayerButton.setMinimumSize(new java.awt.Dimension(108, 29));
-
-        pendingButton.setText("Pending For Aprroval");
-        pendingButton.setMaximumSize(new java.awt.Dimension(108, 29));
-        pendingButton.setMinimumSize(new java.awt.Dimension(108, 29));
-
-        addPlayerButton.setLabel("Add Player");
-
-        JLabelPlayer.setBackground(new java.awt.Color(0, 102, 102));
-        JLabelPlayer.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        JLabelPlayer.setForeground(new java.awt.Color(255, 255, 255));
-        JLabelPlayer.setText("Edit Players");
-        JLabelPlayer.setAutoscrolls(true);
-        JLabelPlayer.setOpaque(true);
-
-        jLabelAdmin.setBackground(new java.awt.Color(0, 102, 102));
-        jLabelAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabelAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelAdmin.setText("Administration");
-        jLabelAdmin.setOpaque(true);
-
-        javax.swing.GroupLayout AdministrationLayout = new javax.swing.GroupLayout(Administration);
-        Administration.setLayout(AdministrationLayout);
-        AdministrationLayout.setHorizontalGroup(
-            AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AdministrationLayout.createSequentialGroup()
-                .addGap(274, 274, 274)
-                .addGroup(AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pendingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addPlayerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(deletePlayerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(251, Short.MAX_VALUE))
-            .addGroup(AdministrationLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLabelPlayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        AdministrationLayout.setVerticalGroup(
-            AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AdministrationLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pendingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JLabelPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(addPlayerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deletePlayerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(349, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Administration);
-        Administration.setBounds(240, 50, 700, 580);
 
         jScrollPane1.setBorder(null);
 
@@ -164,14 +112,162 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(40, 50, 180, 450);
 
+        jLabel1.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Teams");
+        jLabel1.setOpaque(true);
+
+        jButtonAddTeam.setLabel("Add Team");
+
+        jButtonUpdateTeam.setText("Update Team");
+
+        jButtonRemoveTeam.setText("Remove Team");
+
+        javax.swing.GroupLayout TeamPanelLayout = new javax.swing.GroupLayout(TeamPanel);
+        TeamPanel.setLayout(TeamPanelLayout);
+        TeamPanelLayout.setHorizontalGroup(
+            TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeamPanelLayout.createSequentialGroup()
+                .addContainerGap(319, Short.MAX_VALUE)
+                .addGroup(TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonRemoveTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonUpdateTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAddTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(239, 239, 239))
+        );
+        TeamPanelLayout.setVerticalGroup(
+            TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TeamPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jButtonAddTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonUpdateTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonRemoveTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(326, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(TeamPanel);
+        TeamPanel.setBounds(240, 50, 700, 580);
+
+        jLabelCoach.setBackground(new java.awt.Color(0, 102, 102));
+        jLabelCoach.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabelCoach.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelCoach.setText("Coach");
+        jLabelCoach.setOpaque(true);
+
+        jButtonUpdateCoach.setText("Update Coach");
+
+        jButtonAddCoach.setText("Add Coach");
+
+        jButtonRemoveCoach.setText("Remove Coach");
+
+        javax.swing.GroupLayout CoachPanelLayout = new javax.swing.GroupLayout(CoachPanel);
+        CoachPanel.setLayout(CoachPanelLayout);
+        CoachPanelLayout.setHorizontalGroup(
+            CoachPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelCoach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(CoachPanelLayout.createSequentialGroup()
+                .addGap(257, 257, 257)
+                .addGroup(CoachPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonRemoveCoach, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonUpdateCoach, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(276, Short.MAX_VALUE))
+            .addGroup(CoachPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CoachPanelLayout.createSequentialGroup()
+                    .addGap(257, 257, 257)
+                    .addComponent(jButtonAddCoach, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(276, Short.MAX_VALUE)))
+        );
+        CoachPanelLayout.setVerticalGroup(
+            CoachPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CoachPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabelCoach, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104)
+                .addComponent(jButtonUpdateCoach, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButtonRemoveCoach, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(300, Short.MAX_VALUE))
+            .addGroup(CoachPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CoachPanelLayout.createSequentialGroup()
+                    .addGap(79, 79, 79)
+                    .addComponent(jButtonAddCoach, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(452, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(CoachPanel);
+        CoachPanel.setBounds(240, 50, 700, 580);
+
+        DeleteUserButton.setText("Delete User");
+        DeleteUserButton.setToolTipText("");
+        DeleteUserButton.setMaximumSize(new java.awt.Dimension(108, 29));
+        DeleteUserButton.setMinimumSize(new java.awt.Dimension(108, 29));
+
+        pendingButton.setText("Pending For Aprroval");
+        pendingButton.setMaximumSize(new java.awt.Dimension(108, 29));
+        pendingButton.setMinimumSize(new java.awt.Dimension(108, 29));
+        pendingButton.setRolloverEnabled(true);
+
+        addUserButton.setText("Add User");
+
+        JLabelUsers.setBackground(new java.awt.Color(0, 102, 102));
+        JLabelUsers.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        JLabelUsers.setForeground(new java.awt.Color(255, 255, 255));
+        JLabelUsers.setText("Edit Users");
+        JLabelUsers.setAutoscrolls(true);
+        JLabelUsers.setOpaque(true);
+
+        jLabelAdmin.setBackground(new java.awt.Color(0, 102, 102));
+        jLabelAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabelAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAdmin.setText("Administration");
+        jLabelAdmin.setOpaque(true);
+
+        javax.swing.GroupLayout AdministrationLayout = new javax.swing.GroupLayout(Administration);
+        Administration.setLayout(AdministrationLayout);
+        AdministrationLayout.setHorizontalGroup(
+            AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdministrationLayout.createSequentialGroup()
+                .addGap(273, 273, 273)
+                .addGroup(AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pendingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
+            .addGroup(AdministrationLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JLabelUsers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        AdministrationLayout.setVerticalGroup(
+            AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdministrationLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pendingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JLabelUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(addUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DeleteUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(343, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Administration);
+        Administration.setBounds(240, 50, 700, 580);
+
         jLabelBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/main.png"))); // NOI18N
         jLabelBG.setSize(new java.awt.Dimension(976, 732));
         getContentPane().add(jLabelBG);
         jLabelBG.setBounds(0, 0, 976, 732);
-        getContentPane().add(TeamPanel);
-        TeamPanel.setBounds(240, 50, 700, 580);
-        getContentPane().add(CoachPanel);
-        CoachPanel.setBounds(240, 50, 700, 580);
         getContentPane().add(PlayerPanel);
         PlayerPanel.setBounds(240, 50, 700, 580);
         getContentPane().add(ReceptionistPanel);
@@ -189,7 +285,13 @@ public class Admin extends javax.swing.JFrame {
             case "Administration":
                 
                 Administration.setVisible(true);
+                TeamPanel.setVisible(false);
+                PlayerPanel.setVisible(false);
+                ReceptionistPanel.setVisible(false);
+                CustomerPanel.setVisible(false);
+                CoachPanel.setVisible(false);
                 break;
+                
             case "Coach":
                 Administration.setVisible(false);
                 TeamPanel.setVisible(false);
@@ -239,14 +341,22 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JPanel Administration;
     private javax.swing.JPanel CoachPanel;
     private javax.swing.JPanel CustomerPanel;
-    private javax.swing.JLabel JLabelPlayer;
+    private javax.swing.JButton DeleteUserButton;
+    private javax.swing.JLabel JLabelUsers;
     private javax.swing.JPanel PlayerPanel;
     private javax.swing.JPanel ReceptionistPanel;
     private javax.swing.JPanel TeamPanel;
-    private javax.swing.JButton addPlayerButton;
-    private javax.swing.JButton deletePlayerButton;
+    private javax.swing.JButton addUserButton;
+    private javax.swing.JButton jButtonAddCoach;
+    private javax.swing.JButton jButtonAddTeam;
+    private javax.swing.JButton jButtonRemoveCoach;
+    private javax.swing.JButton jButtonRemoveTeam;
+    private javax.swing.JButton jButtonUpdateCoach;
+    private javax.swing.JButton jButtonUpdateTeam;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAdmin;
     private javax.swing.JLabel jLabelBG;
+    private javax.swing.JLabel jLabelCoach;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton pendingButton;
     // End of variables declaration//GEN-END:variables
