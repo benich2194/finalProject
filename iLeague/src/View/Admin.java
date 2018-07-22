@@ -5,26 +5,13 @@
  */
 package View;
 
+import java.awt.Color;
 import javax.swing.DefaultListSelectionModel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 import static javax.swing.ListSelectionModel.SINGLE_SELECTION;
 
 public class Admin extends javax.swing.JFrame {
-
-    /**
-     * @return the jLabelBG
-     */
-    public javax.swing.JLabel getjLabelBG() {
-        return jLabelBG;
-    }
-
-    /**
-     * @param jLabelBG the jLabelBG to set
-     */
-    public void setjLabelBG(javax.swing.JLabel jLabelBG) {
-        this.jLabelBG = jLabelBG;
-    }
 
     public Admin() {
         initComponents();
@@ -38,8 +25,23 @@ public class Admin extends javax.swing.JFrame {
         ReceptionistPanel.setVisible(false);
         CustomerPanel.setVisible(false);
 
+        AdminMenu.setOpaque(true);
+        AdminMenu.setBackground(new Color(0, 0, 0, 0));
     }
 
+     /**
+     * @return the jLabelBG
+     */
+    public javax.swing.JLabel getjLabelBG() {
+        return jLabelBG;
+    }
+
+    /**
+     * @param jLabelBG the jLabelBG to set
+     */
+    public void setjLabelBG(javax.swing.JLabel jLabelBG) {
+        this.jLabelBG = jLabelBG;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -101,11 +103,13 @@ public class Admin extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(null);
 
+        AdminMenu.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         AdminMenu.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Administration", "Coach", "Team", "Player", "Receptionist", "Customer" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        AdminMenu.setSelectionBackground(new java.awt.Color(0, 153, 153));
         AdminMenu.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 AdminMenuValueChanged(evt);
@@ -117,8 +121,9 @@ public class Admin extends javax.swing.JFrame {
         jScrollPane1.setBounds(40, 50, 180, 450);
 
         jLabelBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/main.png"))); // NOI18N
+        jLabelBG.setSize(new java.awt.Dimension(976, 732));
         getContentPane().add(jLabelBG);
-        jLabelBG.setBounds(0, 0, 990, 740);
+        jLabelBG.setBounds(0, 0, 976, 732);
         getContentPane().add(TeamPanel);
         TeamPanel.setBounds(240, 50, 700, 580);
         getContentPane().add(CoachPanel);
