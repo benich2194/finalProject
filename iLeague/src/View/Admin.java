@@ -18,6 +18,7 @@ public class Admin extends javax.swing.JFrame {
         AdminMenu.setSelectionMode(DefaultListSelectionModel.SINGLE_SELECTION);
         AdminMenu.setListData(adminMenu);
 
+        //DESIGN:
         Administration.setVisible(false);
         CoachPanel.setVisible(false);
         TeamPanel.setVisible(false);
@@ -25,6 +26,20 @@ public class Admin extends javax.swing.JFrame {
         ReceptionistPanel.setVisible(false);
         CustomerPanel.setVisible(false);
 
+        Administration.setOpaque(true);
+        CoachPanel.setOpaque(true);
+        TeamPanel.setOpaque(true);
+        PlayerPanel.setOpaque(true);
+        ReceptionistPanel.setOpaque(true);
+        CustomerPanel.setOpaque(true);
+        
+        Administration.setBackground(new Color(0, 0, 0, 0));
+        CoachPanel.setBackground(new Color(0, 0, 0, 0));
+        TeamPanel.setBackground(new Color(0, 0, 0, 0));
+        PlayerPanel.setBackground(new Color(0, 0, 0, 0));
+        ReceptionistPanel.setBackground(new Color(0, 0, 0, 0));
+        CustomerPanel.setBackground(new Color(0, 0, 0, 0));
+        
         AdminMenu.setOpaque(true);
         AdminMenu.setBackground(new Color(0, 0, 0, 0));
     }
@@ -52,9 +67,11 @@ public class Admin extends javax.swing.JFrame {
     private void initComponents() {
 
         Administration = new javax.swing.JPanel();
-        deleteUsers = new javax.swing.JButton();
+        deletePlayerButton = new javax.swing.JButton();
         pendingButton = new javax.swing.JButton();
-        addUsers = new javax.swing.JButton();
+        addPlayerButton = new javax.swing.JButton();
+        JLabelPlayer = new javax.swing.JLabel();
+        jLabelAdmin = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AdminMenu = new javax.swing.JList<>();
         jLabelBG = new javax.swing.JLabel();
@@ -68,34 +85,61 @@ public class Admin extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(976, 732));
         getContentPane().setLayout(null);
 
-        deleteUsers.setText("Delete Users");
+        deletePlayerButton.setLabel("Delete Player");
+        deletePlayerButton.setMaximumSize(new java.awt.Dimension(108, 29));
+        deletePlayerButton.setMinimumSize(new java.awt.Dimension(108, 29));
 
         pendingButton.setText("Pending For Aprroval");
+        pendingButton.setMaximumSize(new java.awt.Dimension(108, 29));
+        pendingButton.setMinimumSize(new java.awt.Dimension(108, 29));
 
-        addUsers.setText("Add Users");
+        addPlayerButton.setLabel("Add Player");
+
+        JLabelPlayer.setBackground(new java.awt.Color(0, 102, 102));
+        JLabelPlayer.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        JLabelPlayer.setForeground(new java.awt.Color(255, 255, 255));
+        JLabelPlayer.setText("Edit Players");
+        JLabelPlayer.setAutoscrolls(true);
+        JLabelPlayer.setOpaque(true);
+
+        jLabelAdmin.setBackground(new java.awt.Color(0, 102, 102));
+        jLabelAdmin.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabelAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAdmin.setText("Administration");
+        jLabelAdmin.setOpaque(true);
 
         javax.swing.GroupLayout AdministrationLayout = new javax.swing.GroupLayout(Administration);
         Administration.setLayout(AdministrationLayout);
         AdministrationLayout.setHorizontalGroup(
             AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdministrationLayout.createSequentialGroup()
-                .addGap(289, 289, 289)
+                .addGap(274, 274, 274)
                 .addGroup(AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pendingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addUsers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(deleteUsers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(addPlayerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deletePlayerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(251, Short.MAX_VALUE))
+            .addGroup(AdministrationLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLabelPlayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         AdministrationLayout.setVerticalGroup(
             AdministrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdministrationLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(addUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(pendingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(deleteUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(150, 150, 150))
+                .addGap(23, 23, 23)
+                .addComponent(jLabelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pendingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JLabelPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(addPlayerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deletePlayerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(349, Short.MAX_VALUE))
         );
 
         getContentPane().add(Administration);
@@ -195,11 +239,13 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JPanel Administration;
     private javax.swing.JPanel CoachPanel;
     private javax.swing.JPanel CustomerPanel;
+    private javax.swing.JLabel JLabelPlayer;
     private javax.swing.JPanel PlayerPanel;
     private javax.swing.JPanel ReceptionistPanel;
     private javax.swing.JPanel TeamPanel;
-    private javax.swing.JButton addUsers;
-    private javax.swing.JButton deleteUsers;
+    private javax.swing.JButton addPlayerButton;
+    private javax.swing.JButton deletePlayerButton;
+    private javax.swing.JLabel jLabelAdmin;
     private javax.swing.JLabel jLabelBG;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton pendingButton;
