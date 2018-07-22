@@ -68,16 +68,16 @@ public class Admin extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         AdminMenu = new javax.swing.JList<>();
-        TeamPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButtonAddTeam = new javax.swing.JButton();
-        jButtonUpdateTeam = new javax.swing.JButton();
-        jButtonRemoveTeam = new javax.swing.JButton();
         CoachPanel = new javax.swing.JPanel();
         jLabelCoach = new javax.swing.JLabel();
         jButtonUpdateCoach = new javax.swing.JButton();
         jButtonAddCoach = new javax.swing.JButton();
         jButtonRemoveCoach = new javax.swing.JButton();
+        TeamPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonAddTeam = new javax.swing.JButton();
+        jButtonUpdateTeam = new javax.swing.JButton();
+        jButtonRemoveTeam = new javax.swing.JButton();
         Administration = new javax.swing.JPanel();
         DeleteUserButton = new javax.swing.JButton();
         pendingButton = new javax.swing.JButton();
@@ -112,48 +112,6 @@ public class Admin extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(40, 50, 180, 450);
 
-        jLabel1.setBackground(new java.awt.Color(0, 102, 102));
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Teams");
-        jLabel1.setOpaque(true);
-
-        jButtonAddTeam.setLabel("Add Team");
-
-        jButtonUpdateTeam.setText("Update Team");
-
-        jButtonRemoveTeam.setText("Remove Team");
-
-        javax.swing.GroupLayout TeamPanelLayout = new javax.swing.GroupLayout(TeamPanel);
-        TeamPanel.setLayout(TeamPanelLayout);
-        TeamPanelLayout.setHorizontalGroup(
-            TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeamPanelLayout.createSequentialGroup()
-                .addContainerGap(319, Short.MAX_VALUE)
-                .addGroup(TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonRemoveTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonUpdateTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAddTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(239, 239, 239))
-        );
-        TeamPanelLayout.setVerticalGroup(
-            TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TeamPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButtonAddTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonUpdateTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonRemoveTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(326, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(TeamPanel);
-        TeamPanel.setBounds(240, 50, 700, 580);
-
         jLabelCoach.setBackground(new java.awt.Color(0, 102, 102));
         jLabelCoach.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabelCoach.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,6 +121,11 @@ public class Admin extends javax.swing.JFrame {
         jButtonUpdateCoach.setText("Update Coach");
 
         jButtonAddCoach.setText("Add Coach");
+        jButtonAddCoach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddCoachActionPerformed(evt);
+            }
+        });
 
         jButtonRemoveCoach.setText("Remove Coach");
 
@@ -202,6 +165,48 @@ public class Admin extends javax.swing.JFrame {
 
         getContentPane().add(CoachPanel);
         CoachPanel.setBounds(240, 50, 700, 580);
+
+        jLabel1.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Teams");
+        jLabel1.setOpaque(true);
+
+        jButtonAddTeam.setLabel("Add Team");
+
+        jButtonUpdateTeam.setText("Update Team");
+
+        jButtonRemoveTeam.setText("Remove Team");
+
+        javax.swing.GroupLayout TeamPanelLayout = new javax.swing.GroupLayout(TeamPanel);
+        TeamPanel.setLayout(TeamPanelLayout);
+        TeamPanelLayout.setHorizontalGroup(
+            TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeamPanelLayout.createSequentialGroup()
+                .addContainerGap(319, Short.MAX_VALUE)
+                .addGroup(TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonRemoveTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonUpdateTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAddTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(239, 239, 239))
+        );
+        TeamPanelLayout.setVerticalGroup(
+            TeamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TeamPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jButtonAddTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonUpdateTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonRemoveTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(323, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(TeamPanel);
+        TeamPanel.setBounds(240, 50, 700, 580);
 
         DeleteUserButton.setText("Delete User");
         DeleteUserButton.setToolTipText("");
@@ -335,6 +340,14 @@ public class Admin extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_AdminMenuValueChanged
+
+    private void jButtonAddCoachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddCoachActionPerformed
+        // TODO add your handling code here:
+        AddCoach coachForm = new AddCoach();
+        coachForm.setSize(700, 580);
+        coachForm.setVisible(true);
+        //MAKE THE FORM APPEAR IN WINDOW----------???
+    }//GEN-LAST:event_jButtonAddCoachActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> AdminMenu;
