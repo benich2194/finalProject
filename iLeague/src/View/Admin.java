@@ -145,7 +145,7 @@ public class Admin extends javax.swing.JFrame {
             case "Administration":
                 
                 Administration.setVisible(true);
-                
+                break;
             case "Coach":
                 Administration.setVisible(false);
                 TeamPanel.setVisible(false);
@@ -153,6 +153,7 @@ public class Admin extends javax.swing.JFrame {
                 ReceptionistPanel.setVisible(false);
                 CustomerPanel.setVisible(false);
                 CoachPanel.setVisible(true);
+                break;
             case "Team":
                 Administration.setVisible(false);
                 CoachPanel.setVisible(false);
@@ -160,6 +161,7 @@ public class Admin extends javax.swing.JFrame {
                 ReceptionistPanel.setVisible(false);
                 CustomerPanel.setVisible(false);
                 TeamPanel.setVisible(true);
+                break;
             case "Player":
                 Administration.setVisible(false);
                 CoachPanel.setVisible(false);
@@ -167,6 +169,7 @@ public class Admin extends javax.swing.JFrame {
                 ReceptionistPanel.setVisible(false);
                 CustomerPanel.setVisible(false);
                 PlayerPanel.setVisible(true);
+                break;
             case "Receptionist":
                 Administration.setVisible(false);
                 CoachPanel.setVisible(false);
@@ -174,6 +177,7 @@ public class Admin extends javax.swing.JFrame {
                 PlayerPanel.setVisible(false);
                 CustomerPanel.setVisible(false);
                 ReceptionistPanel.setVisible(true);
+                break;
             case "Customer":
                 Administration.setVisible(false);
                 CoachPanel.setVisible(false);
@@ -181,6 +185,7 @@ public class Admin extends javax.swing.JFrame {
                 PlayerPanel.setVisible(false);
                 ReceptionistPanel.setVisible(false);
                 CustomerPanel.setVisible(true);
+                break;
 
         }
     }//GEN-LAST:event_AdminMenuValueChanged
